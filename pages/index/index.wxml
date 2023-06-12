@@ -1,0 +1,82 @@
+<cu-custom bgColor="bg-white"  ><view slot="content">选择耕地</view></cu-custom>
+<block wx:if="{{userType===2}}">
+    <!-- 耕地列表 -->
+    <view class="menu">
+        <view class="menu-item" wx:for="{{ploughList}}" wx:key="index">
+            <image class="menu-item-img" src="{{item.imageUrl?item.imageUrl:''}}" data-index="{{index}}" bindtap="clickLand" data-id="{{item.id}}"></image>
+            <text class="image-text">{{item.name.length>10?item.name.substring(0,8)+'...':item.name}}</text>
+        </view>
+        <view class="callAdmin" bindtap="goChat"><text>联系管理员</text>  <image class="adminImg" src="../../images/customer_service_icon@3x.png"></image></view>
+    </view>
+    <!-- 暂无数据 -->
+    <view class="no-data" wx:if="{{ploughList.length === 0}}">
+        <text class="icon iconfont icon-zanwushuju"></text>
+        <text>没有更多数据了</text>
+    </view>
+     
+    <!--屏幕背景变暗的背景  -->
+    <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+
+    <!--弹出框  -->
+    <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+        <!--自定义弹窗内容-->
+        <view class="detail-content">
+            <!-- title -->
+            <view class="detail-title">
+                <text>{{ploughDetail.name}}</text>
+                <image class="icon-close" src="../../images/close.png" bindtap="clickClose"></image>
+            </view>
+            <scroll-view class="scroll-height" scroll-y="true" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+                <view style="height: 500rpx;width: 100%;background: #000;">
+                    <!-- 直播 -->
+                    <video id="myVideo" class="topVideo" wx:if="{{videoShow}}" custom-cache="{{false}}" picture-in-picture-show-progress="{{false}}" show-fullscreen-btn="{{false}}" show-play-btn="{{false}}"  show-progress="{{false}}" show-bottom-progress="{{false}}" src="{{ploughDetailUrl}}"   bindplay='playSuccess' autoplay></video>
+                    <view class="loadingBox" wx:if="{{videoLoad}}">
+                        <image class="loadingSvg" src="../../images/loading.svg"></image>
+                    </view>
+                </view>
+
+                <!-- <web-view id="myVideo" src="{{ploughDetailUrl}}"></web-view> -->
+                <!-- 种植信息 -->
+                <!-- 耕地审核通过显示作物信息 -->
+                <view class="crop-content" wx:if="{{ploughDetail.status===2}}">
+                    <view class="crop-item" wx:for="{{crops}}" wx:key="index">
+                        <view>
+                            <image class="crop-image" src="../../images/crop.png"></image>
+                            <text class="crop-title">{{item.name}}</text>
+                        </view>
+                        <view>
+                            状态：
+                            <text class="crop-text">{{item.state}}</text>
+                        </view>
+                        <view>
+                            价格：
+                            <text class="crop-text">{{item.value}}</text>
+                        </view>
+                    </view>
+                </view>
+                <!-- 详情 -->
+                <view class="basic-content">
+                    <view class="basic-title">基本信息</view>
+                    <view class="basic-info">
+                        {{ploughDetail.description}}
+                    </view>
+                </view>
+            </scroll-view>
+            <!-- 按钮 -->
+            <view class="bottom-content">
+                <view class="bottom-box">
+                    <bottom-btn loading="{{submitLoading}}" text="{{submitStatus}}" content="{{submitContext}}" disabled="{{disabled}}" bind:confirm="submit"></bottom-btn>
+                    <!-- <view class="order-icon" bindtap="openOrder">
+                    <image class="order-image" src="../../images/order.png"></image>
+                    <view><text>订单</text></view>
+                </view> -->
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<view wx:elif="{{userType===1}}">
+    <!-- 管理员显示 -->
+    <mange-list ploughList="{{ploughList}}" bind:refresh="refresh"></mange-list>
+</view>
+<view  style="height: 50px;"></view>

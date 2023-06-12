@@ -1,0 +1,47 @@
+
+<!-- 搜索 -->
+<view class="header">
+</view>
+
+<!-- 列表 -->
+<!-- 订单 -->
+<view wx:if="{{type==='order'}}" class="list">
+    <view class="list-item" wx:for="{{list}}" wx:key="id" data-id="{{item.id}}" bindtap="linkToOrder">
+      <view class="list-content">
+        <image class="list-image" src="{{item.orderImgUrl}}"></image>
+        <view class="info">
+            <view class="title">{{item.userName}} {{item.userAddress}}</view>
+            <view class="date">{{item.ploughName}}</view>
+        </view>
+      </view>
+      <!-- 待发货 1 已发货2 已签收3 订单状态（1.待发货   2:已发货  3.已接收） -->
+        <view class="status unSend" wx:if="{{item.status === 1}}">待发货</view>
+        <view class="status common" wx:elif="{{item.status === 2}}">已发货</view>
+        <view class="status common" wx:elif="{{item.status === 3}}">已签收</view>
+    </view>
+</view>
+<!-- 认领 -->
+<view wx:if="{{type==='record'}}" class="list">
+    <view class="list-item" wx:for="{{list}}" wx:key="id" data-id="{{item.id}}" data-ploughid="{{item.ploughId}}" bindtap="linkToRecord">
+      <view class="list-content">
+        <image class="list-image" src="{{item.ploughImageUrl}}"></image>
+        <view class="info">
+            <view class="title">{{item.userName}} {{item.userAddress}}</view>
+            <view class="date">{{item.ploughName}}</view>
+        </view>
+      </view>
+      <!-- 表示状态(0:审核中 1:未通过 2:审核通过 3:生长中 4：已成熟) -->
+        <view class="status unSend" wx:if="{{item.status === 0 && userType===2}}">审核中</view>
+        <view class="status unSend" wx:if="{{item.status === 0 && userType===1}}">待审核</view>
+        <view class="status undone" wx:elif="{{item.status === 1}}">未通过</view>
+        <view class="status pass" wx:elif="{{item.status === 2}}">审核通过</view>
+        <view class="status pass" wx:elif="{{item.status === 3}}">生长中</view>
+        <view class="status pass" wx:elif="{{item.status === 4}}">已成熟</view>
+    </view>
+</view>
+
+<!-- 暂无数据 -->
+<view class="no-data" wx:if="{{list.length === 0}}">
+    <text class="icon iconfont icon-zanwushuju"></text>
+    <text>没有更多数据了</text>
+</view>

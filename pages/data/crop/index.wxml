@@ -1,0 +1,63 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">作物详情</view></cu-custom>
+
+<!-- 作物表单 -->
+<view class="form">
+    <!-- 基本信息 -->
+    <view class="group">
+        <view class="form-item ">
+            <view class="label">作物名称</view>
+            <view class="block">
+                <input type="text" placeholder-class="placeholder" placeholder="请输入" value="{{name}}" bindinput="setCropName" />
+            </view>
+        </view>
+        <view class="form-item ">
+            <view class="label">作物图片</view>
+            <view class="block">
+                <view class="block block-flex" bindtap="chooseImage">
+                    <input hidden="{{imageUrl.length>0}}" type="text" placeholder-class="placeholder" placeholder="请选择" value="{{ imageUrl}}" disabled />
+                            
+                    <image wx:if="{{imageUrl}}" class="upload-image" src='{{imageUrl}}'></image>
+                    <text class="iconfont icon-arrow-r"></text>
+                </view>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="label">作物状态</view>
+            <view class="block">
+                <picker bindchange="bindCropStateChange" value="{{status}}" range="{{cropList}}" range-key="value">
+                    <view class="picker block-flex">
+                        <input type="text" placeholder-class="placeholder" placeholder="请选择"
+                            value="{{cropList[status]['value']}}" disabled />
+                        <text class="iconfont icon-arrow-r"></text>
+                    </view>
+                </picker>
+            </view>
+        </view>
+        <view class="form-item ">
+            <view class="label">销售规格</view>
+            <view class="block">
+                <input type="number" placeholder-class="placeholder" placeholder="请输入" value="{{specifications? specifications:''}}" bindinput="setStandard" />
+                <text class="input-unit">g</text> 
+            </view>
+        </view>
+        <view class="form-item ">
+            <view class="label">销售单价</view>
+            <view class="block">
+                <input type="digit" placeholder-class="placeholder" placeholder="请输入" value="{{unitPrice}}" bindinput="setValue"/>
+                <text class="input-unit">元</text>
+            </view>
+        </view>
+        <view class="form-item ">
+            <view class="label">录入产量</view>
+            <view class="block">
+                <input type="digit" placeholder-class="placeholder" placeholder="请输入" value="{{amount}}" bindinput="setOutput"/>
+            </view>
+        </view>
+    </view>
+</view>
+
+<!-- 提交按钮 -->
+<view class="footer"  style="{{'padding-bottom:76rpx'}}">
+    <button class="default-btn m-r-16" bindtap="deleteCrop"type="default">删除</button> 
+    <button class="m-b-36 m-l-16" bindtap="submitCrop" type="primary" >确认</button>  
+</view>

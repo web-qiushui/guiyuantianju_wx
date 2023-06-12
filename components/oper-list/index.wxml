@@ -1,0 +1,16 @@
+<!-- 列表操作 -->
+  <!-- <view class="content" bindtouchstart="touchStart" bindtouchend="touchEnd"   wx:for="{{clockList}}" wx:key="index" data-index="{{index}}" style="">
+  <view style="right:{{item.show?'0':'-130'}}rpx">
+    <view class="left">
+      <view class="left-box">
+        <image class="crop-image" src="../../images/crop.png"></image>
+        <text>{{item.content}}</text>
+      </view>
+      <view class="left-oper">管理</view>
+    </view>
+    <view class="right"  bindtap="delClock" data-index="{{index}}">
+      删除
+    </view>
+  </view>
+</view> -->
+

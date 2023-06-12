@@ -1,0 +1,6 @@
+.tabTxt{
+  color: #64eca6;
+}
+.tabCur{
+  color: #49d18a;
+}

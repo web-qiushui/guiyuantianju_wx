@@ -1,0 +1,30 @@
+<park wx:if="{{PageCur=='park'}}"></park>
+<land wx:if="{{PageCur=='land'}}"></land>
+<record wx:if="{{PageCur=='record'}}"></record>
+<call wx:if="{{PageCur=='call'}}"></call>
+<view class="cu-bar tabbar bg-white shadow foot">
+  <view class="action" wx:if="{{userType===2}}" bindtap="NavChange" data-cur="park">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/park{{PageCur=='park'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='park'?'tabCur':'tabTxt'}}">园区</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="land">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/land{{PageCur=='land'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='land'?'tabCur':'tabTxt'}}">耕地</view>
+  </view>
+  <view class="action"  bindtap="NavChange" data-cur="record">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/record{{PageCur=='record'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='basics'?'tabCur':'tabTxt'}}">记录</view>
+  </view>
+  <view class="action" wx:if="{{userType===1}}" bindtap="NavChange" data-cur="call">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/call{{PageCur=='call'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='call'?'tabCur':'tabTxt'}}">咨询</view>
+  </view>
+</view>

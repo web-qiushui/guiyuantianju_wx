@@ -1,0 +1,25 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">认领审核</view></cu-custom>
+
+<!-- 认领耕地详情-->
+<view class="apply-container">
+   <!-- 申请信息 -->
+   <view class="apply-content">
+        <view class="apply-item">
+            <image class="apply-icon" src="../../../images/time.png"></image>
+            <text>{{claimDetail.createDate}}</text>
+        </view>
+        <view class="apply-item">
+            <image class="apply-icon" src="../../../images/user.png"></image>
+            <text>{{claimDetail.userName}}</text>
+        </view>
+        <view class="apply-item">
+            <image class="apply-icon" src="../../../images/addr.png"></image>
+            <text>{{claimDetail.ploughName}}</text>
+        </view>
+    </view>
+    <!-- 按钮 -->
+    <view class="bottom-content"  wx:if="{{userType === 1 && claimDetail.status===0}}">
+        <button class="m-b-36" bindtap="pass" type="primary" data-index="2">通过</button> 
+        <button class="default-btn" bindtap="pass"type="default" data-index="1">不通过</button> 
+    </view>
+</view>

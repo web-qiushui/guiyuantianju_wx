@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "my-video": "../../components/video",
+    "bottom-btn": "../../components/bottom-btn",
+    "mange-list": "../../pages/mange"
+  },
+  "navigationBarTitleText": "选择耕地"
+}

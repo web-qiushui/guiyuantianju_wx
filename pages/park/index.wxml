@@ -1,0 +1,25 @@
+<cu-custom bgColor="bg-white"  ><view slot="content">园区</view></cu-custom>
+<view class="topBox">
+  <swiper class="screen-swiper square-dot bgImg" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+    <swiper-item wx:for="{{list}}" wx:key>
+      <image src="{{item}}" mode="aspectFill"></image>
+    </swiper-item>
+  </swiper>
+  <!-- <image class="bgImg" src="../../../images/park.png" mode='aspectFill'></image> -->
+  <!-- <view class="txtInfo">
+    <view class="title">宁强县出村进城项目</view>
+    <view class="more">互联网赋能农产品销售，打造百万购销平台</view>
+  </view> -->
+</view>
+<view class="infoBox">
+  <!-- <view class="title">园区介绍</view> -->
+  <scroll-view class="more" scroll-y scroll-with-animation style="height:calc(100vh - 40vh - {{CustomBar + 56}}px)">
+    <view style="margin-bottom: 20px;">
+      这如诗如画的田园风光，折射出的是宁强县加快实施乡村振兴战略、高质量推进美丽乡村建设的责任与担当。近年来，饶阳县因地制宜，大力发展特色产业，加强基础设施建设，激活乡村治理动能，不断推动乡村美丽蝶变。
+    </view>
+    <view>
+      走进其中，又见红黄落叶随风落下，斑驳成影下地劳作的人们有说有笑，不亦乐乎。呼吸着清甜的空气，听着深巷中不时传来的几声犬吠，让人颇有“久在樊笼里，复得返自然”之感，陶渊明笔下的“归园田居”在这里重现。
+    </view>
+    <view class="underlay"></view>
+  </scroll-view>
+</view>

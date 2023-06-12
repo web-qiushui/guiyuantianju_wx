@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "dialog": "../../../components/dialog",
+    "bottom-btn": "../../../components/bottom-btn"
+  },
+  "navigationBarTitleText": "认领审核"
+}

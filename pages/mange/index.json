@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "dialog": "../../components/dialog",
+    "bottom-btn": "../../components/bottom-btn",
+    "oper-list": "../../components/oper-list"
+  },
+  "navigationBarTitleText": "耕地管理"
+}

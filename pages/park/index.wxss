@@ -1,0 +1,49 @@
+.topBox{
+  position: relative;
+}
+.topBox .bgImg{
+  width: 100%;
+  height: 40vh;
+}
+.topBox .txtInfo{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .3);
+  color: #fff;
+  padding: 36rpx 48rpx;
+}
+
+.topBox .txtInfo .title{
+  font-size: 30rpx;
+  font-weight: bold;
+  letter-spacing: 2rpx;
+  margin-bottom: 18rpx;
+}
+
+.topBox .txtInfo .more{
+  font-size: 26rpx;
+  letter-spacing: 2rpx;
+}
+
+.infoBox{
+  background-color: #fff;
+  padding: 24rpx 36rpx;
+  height: 70vh;
+}
+
+.title{
+  font-size: 34rpx;
+  font-weight: bold;
+  margin-bottom: 48rpx;
+}
+.more{
+  line-height: 48rpx;
+  text-align: justify;
+  color: #a8aaae;
+}
+
+.more .underlay{
+  width: 100%;height: 24rpx;
+}

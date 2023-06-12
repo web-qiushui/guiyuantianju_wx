@@ -1,0 +1,5 @@
+<!-- 底部btn -->
+<view class="btn-content">
+    <button class="btn-submit" disabled="{{disabled}}" type="primary" bindtap="confirm">{{text}}</button>
+    <text wx:if="{{content}}">{{content}}</text>
+</view>

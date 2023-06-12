@@ -1,0 +1,161 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">工单详情</view></cu-custom>
+
+<view class="container">
+    <!-- 基本信息 -->
+    <view class="group">
+        <view class="group-title">
+            <view class="bl"></view>
+            <view class="title">基本信息</view>
+        </view>
+        <view class="group-list">
+            <view class="group-list-item">
+                <view class="label">生产单号</view>
+                <view class="block">{{detail.production.productionNo}}</view>
+            </view>
+            <view class="group-list-item">
+                <view class="label">型号</view>
+                <view class="block">{{detail.production.modelNumber}}</view>
+            </view>
+            <view class="group-list-item">
+                <view class="label">规格</view>
+                <view class="block">{{detail.production.specification}}</view>
+            </view>
+            <view class="group-list-item">
+                <view class="label">计划生产</view>
+                <view class="block">{{detail.production.planNumber}}</view>
+            </view>
+            <view class="group-list-item">
+                <view class="label">交货日期</view>
+                <view class="block">{{detail.production.planSendDateMsg}}</view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 发货员 -->
+    <view class="group" wx:if="{{detail.production.sendInfo != undefined && JSON.stringify(detail.production.sendInfo) != '{}'}}">
+        <view class="group-title">
+            <view class="bl"></view>
+            <view class="title">发货员</view>
+        </view>
+        <view class="group-list">
+            <view class="group-list-item">
+                <view class="label">姓名</view>
+                <view class="block">{{detail.production.sendInfo.sendName}}</view>
+            </view>
+            <view class="group-list-item">
+                <view class="label">实际交货</view>
+                <view class="block">{{detail.production.sendInfo.sendDateMsg}}</view>
+            </view>
+            <view class="group-list-item">
+                <view class="label">备注</view>
+                <view class="block">{{detail.production.sendInfo.remark}}</view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 验收员 -->
+    <view class="group" wx:if="{{detail.production.checkInfo != undefined && JSON.stringify(detail.production.checkInfo) != '{}'}}" >
+        <view class="group-title">
+            <view class="bl"></view>
+            <view class="title">验收员</view>
+        </view>
+        <view class="group-list">
+            <view class="group-list-item">
+                <view class="label">姓名</view>
+                <view class="block">{{detail.production.checkInfo.checkName}}</view>
+            </view>
+            <view class="group-list-item">
+                <view class="label">验收状态</view>
+                <view class="block">{{detail.production.checkStatusMsg}}</view>
+            </view>
+            <view class="group-list-item">
+                <view class="label">验收日期</view>
+                <view class="block">{{detail.production.checkInfo.checkDateMsg}}</view>
+            </view>
+            <view class="group-list-item">
+                <view class="label">成品米数</view>
+                <view class="block">{{detail.production.checkInfo.productionNumber}}</view>
+            </view>
+            <view class="group-list-item">
+                <view class="label">备注</view>
+                <view class="block">{{detail.production.checkInfo.remark}}</view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 操作员 -->
+    <view class="group" wx:if="{{roleName !== 'SENDGOODS'}}" wx:for="{{detail.recordList}}" wx:key="index">
+        <view class="group-title">
+            <view class="bl"></view>
+            <view class="title">操作员{{nums[index]}}</view>
+        </view>
+        <view class="group-list">
+            <view class="group-list-item">
+                <view class="label">姓名</view>
+                <view class="block">{{item.operatorName}}</view>
+            </view>
+            <view class="group-list-item">
+                <view class="label">机台型号</view>
+                <view class="block">{{item.machineModel}}</view>
+            </view>
+            <view class="group-list-item">
+                <view class="label">班次</view>
+                <view class="block">{{item.workType}}</view>
+            </view>
+            <view class="group-list-item">
+                <view class="label">完成米数</view>
+                <view class="block">{{item.productionNumber}}</view>
+            </view>
+            <view class="group-list-item">
+                <view class="label">备注</view>
+                <view class="block">{{item.remark}}</view>
+            </view>
+            <view class="group-list-item">
+                <view class="label">操作时间</view>
+                <view class="block">{{item.operatorDateMsg}}</view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 备注 -->
+    <view class="group" wx:if="{{roleName === 'SENDGOODS' && sendIdInfoFlag}}">
+        <view class="group-title">
+            <view class="bl"></view>
+            <view class="title">备注</view>
+        </view>
+        <view class="form-item">
+            <view class="block">
+                <view class="textarea-wrap">
+                    <textarea wx:if="{{isArea}}" bindblur="blur" focus="{{isFocus}}" class="textarea" cols="30" rows="10" maxlength="200" placeholder-class="placeholder" placeholder="请填写详细描述" bindinput="setRemark" value="{{remark}}"></textarea>
+                    <view wx:else class="area-copy" bindtap="setTextarea">
+                        <text wx:if="{{remark === ''}}">请填写详细描述</text>
+                        <text style="color: #000;" wx:else>{{remark}}</text>
+                    </view>
+                    <!-- <view class="len">0 / 200</view> -->
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 提交按钮 -->
+    <!-- 管理员 -->
+    <!-- <view class="footer" wx:if="{{roleName === 'MANAGER'}}" style="{{'padding-bottom:8px'}}">
+        <view class="cancel" bindtap="deleteDetail">删除</view>
+        <view class="submit" bindtap="updateDetail">修改</view>
+    </view> -->
+
+    <!-- 验收员 -->
+    <view class="footer" wx:if="{{roleName === 'EXAMINER' && checkIdInfoFlag}}" style="{{'padding-bottom:8px'}}">
+        <view class="cancel" bindtap="back">取消</view>
+        <view class="submit" data-prono="{{detail.production.id}}" bindtap="examineDetail">验收</view>
+    </view>
+
+    <!-- 发货员 -->
+    <view class="footer" wx:if="{{roleName === 'SENDGOODS'  && sendIdInfoFlag}}" style="{{'padding-bottom:8px'}}">
+        <view class="cancel" bindtap="back">取消</view>
+        <view class="submit" bindtap="sendGoods">发货</view>
+    </view>
+</view>
+
+<!-- 弹窗 -->
+<dialog style="opacity: 0;" animation="{{animationData}}" title="{{title}}" content="{{content}}" showCancel="{{false}}" wx:if="{{isShow}}" bind:confirm="confirm"></dialog>

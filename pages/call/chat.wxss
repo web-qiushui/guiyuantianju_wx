@@ -1,0 +1,4 @@
+.updataImgBtn{
+  width: 15px;
+  height: 26px;
+}

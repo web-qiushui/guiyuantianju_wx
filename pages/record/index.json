@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "记录管理",
+  "usingComponents": { 
+    "my-video": "../../components/video",
+    "tabs": "../../components/tabs",
+    "order-list": "../../pages/data/list",
+    "bottom-btn": "../../components/bottom-btn"
+  }
+}

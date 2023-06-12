@@ -1,0 +1,72 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">验收</view></cu-custom>
+
+<!-- 验收员信息 -->
+<view class="form">
+    <view class="group">
+    <view class="group-title">
+        <view class="bl"></view>
+        <view class="title">验收员信息</view>
+        <view class="star">*</view>
+    </view>
+    <view class="form-item first">
+        <view class="label">姓名</view>
+        <view class="block">
+            <input type="text" placeholder-class="placeholder" placeholder="请输入" value="{{userName}}" disabled />
+        </view>
+    </view>
+    <view class="form-item">
+        <view class="label">验收日期</view>
+        <view class="block">
+            <picker mode="date" bindchange="bindDateChange" value="{{date}}">
+                <view class="picker block-flex">
+                    <input type="text" placeholder-class="placeholder" placeholder="请选择" value="{{date}}" disabled />
+                    <text class="iconfont icon-arrow-r"></text>
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class="form-item">
+        <view class="label">验收状态</view>
+        <view class="block block-flex">
+            <radio-group class="radio-group" bindchange="changeStatus">
+                <label class="radio" wx:for="{{status}}" wx:key="index">
+                    <radio value="{{item.value}}" color="#2C4BFF" checked="{{item.checked}}" /> {{item.value === 0 ? '合格' : '不合格' }}
+                </label>
+            </radio-group>
+        </view>
+    </view>
+    <view class="form-item bdno">
+        <view class="label">成品米数</view>
+        <view class="block">
+            <input type="number" placeholder-class="placeholder" placeholder="请输入" value="{{finishedLen}}"
+                bindinput="setFinishedLen" />
+        </view>
+    </view>
+</view>
+
+<!-- 备注 -->
+<view class="group">
+    <view class="group-title">
+        <view class="bl"></view>
+        <view class="title">备注</view>
+    </view>
+    <view class="form-item">
+        <view class="block">
+            <view class="textarea-wrap">
+                <textarea class="textarea" cols="30" rows="10" maxlength="200" placeholder="请填写详细描述"
+                    bindinput="setRemark" value="{{remark}}"></textarea>
+                <!-- <view class="len">0 / 200</view> -->
+            </view>
+        </view>
+    </view>
+</view>
+</view>
+
+<!-- 提交按钮 -->
+<view class="footer" style="{{'padding-bottom:8px'}}">
+    <view class="cancel" bindtap="cancel">取消</view>
+    <view class="submit" bindtap="submit">提交</view>
+</view>
+
+<!-- 弹窗 -->
+<dialog style="opacity: 0;" animation="{{animationData}}" title="验收" content="验收成功" showCancel="{{false}}" wx:if="{{isShow}}" bind:confirm="confirm"></dialog>

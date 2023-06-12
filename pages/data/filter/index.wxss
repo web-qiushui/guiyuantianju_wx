@@ -1,0 +1,149 @@
+/* 搜索 */
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 22rpx 24rpx;
+}
+
+.search{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 70rpx;
+    padding: 0 20rpx;
+    background-color: #fff;
+    border-radius: 8rpx;
+}
+
+.ipt{
+    width: 100%;
+    margin-left: 20rpx;
+}
+
+
+
+.status-list{
+    width: 200rpx;
+    height: 296rpx;
+    position: absolute;
+    left: -220rpx;
+    top: 0;
+    z-index: 99;
+    background-color: #fff;
+    box-shadow: 0 0 10rpx #d8d8d8;
+    opacity: 0;
+}
+
+.ani{
+    opacity: 1;
+    animation: _ani 1s ease;
+}
+
+@keyframes _ani {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.status-list-item{
+    height: 74rpx;
+    line-height: 74rpx;
+    margin-left: 50rpx;
+    color: #343434;
+}
+
+/* 列表 */
+.list{
+    padding: 0 24rpx;
+    background-color: #fff;
+}
+
+.list-item{
+    background-color: #fff;
+    margin-bottom: 1rpx;
+    /* border-radius: 16rpx; */
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; */
+}
+.list-item:active{
+    background-color: #A3A5B0;
+}
+.info{
+    padding: 22rpx 23rpx;
+}
+/*分割线样式*/
+.list-line{
+    background: #E0E3DA;
+    width: 100%;
+    height: 1rpx;
+}
+
+.group-list{
+    margin: 0 32rpx;
+    padding: 28rpx 0;
+    border-top: 1px solid #f3f3f3;
+}
+
+.group-list-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20rpx;
+}
+
+.title{
+    font-size: 34rpx;
+    color: #343434;
+}
+
+.date{
+    margin-top: 20rpx;
+    font-size: 24rpx;
+    color: #A3A5B0;
+}
+
+.status{
+    width: 122rpx;
+    height: 48rpx;
+    border-radius: 24rpx;
+    text-align: center;
+    line-height: 48rpx;
+}
+
+.qualified{
+    background: #2C4BFF;
+    color: #fff;
+}
+
+.unqualified{
+    background: #FEAC2E;
+    color: #fff;
+}
+
+.loading{
+    background: #0BC652;
+    color: #fff;
+}
+
+.no-data{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80rpx 0;
+    color: #d2d2d2;
+}
+
+.icon{
+    font-size: 88rpx;
+    margin-bottom: 20rpx;
+}

@@ -1,0 +1,17 @@
+<!-- 视频 -->
+<video 
+     class="myVideo"
+      id="myVideo" 
+      :src="{{videoUrl}}" 
+      binderror="videoErrorCallback" 
+      enable-danmu 
+      show-center-play-btn='{{false}}' 
+      show-play-btn="{{true}}" 
+      muted="{{true}}"
+      autoplay="{{true}}"
+      controls
+      object-fit="fill"
+      picture-in-picture-mode="{{['push', 'pop']}}"
+      bindenterpictureinpicture='bindVideoEnterPictureInPicture'
+      bindleavepictureinpicture='bindVideoLeavePictureInPicture'
+    ></video>

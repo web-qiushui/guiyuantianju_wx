@@ -1,0 +1,18 @@
+.textarea-content{
+    padding: 40rpx;
+}
+/* 提交按钮 */
+.footer{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 120rpx;
+    background-color: #fff;
+    padding: 0 44rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}

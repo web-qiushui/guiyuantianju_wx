@@ -1,0 +1,5 @@
+/* 弹窗 */
+.myVideo{
+    width: 100%;
+    height: 414rpx;
+}

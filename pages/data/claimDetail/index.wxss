@@ -1,0 +1,42 @@
+.apply-container{
+    height: 90vh;
+    padding: 0 70rpx 56rpx 68rpx;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.apply-content{
+    /* padding: 50rpx 0 40rpx 0; */
+    width: 100%;
+}
+.apply-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    border-bottom: 2rpx solid #D8D8D8;
+    font-size: 34rpx;
+    color:rgba(0, 0, 0, 0.9);
+    padding-top: 48rpx;
+    padding-bottom: 44rpx;
+}
+.apply-icon{
+    width: 44rpx;
+    height: 44rpx;
+    margin-right: 26rpx;
+}
+.default-btn{
+    color: #06AE56;
+}
+.m-b-36{
+    margin-bottom: 36rpx;
+}
+.m-b-76{
+    margin-bottom: 76rpx;
+}
+.bottom-content{
+    /* position: absolute; */
+    
+}

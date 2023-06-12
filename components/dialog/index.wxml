@@ -1,0 +1,12 @@
+<!-- 弹窗 -->
+<view class="dialog">
+    <view class="dialog-win">
+        <!-- <text class="dialog-close iconfont icon-guanbi" wx:if="{{showCancel}}" bindtap="cancel"></text> -->
+        <view class="dialog-title">{{title}}</view>
+        <view class="dialog-content">{{content}}</view>
+        <view class="dialog-btns">
+            <view class="dialog-btns-cancel" wx:if="{{showCancel}}" bindtap="cancel">{{cancelText}}</view>
+            <view class="dialog-btns-confirm" style="{{'width: ' + (showCancel ? '200rpx' : '100%')}}" bindtap="confirm">{{confirmText}}</view>
+        </view>
+    </view>
+</view>

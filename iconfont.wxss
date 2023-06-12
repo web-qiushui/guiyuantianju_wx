@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "iconfont"; /* Project id 1505145 */
+    src: url('//at.alicdn.com/t/font_1505145_whepkzeof4.ttf?t=1631276957114') format('truetype');
+  }
+  
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 32rpx;
+  }
+  
+  .icon-arrow-r:before {
+    content: "\e60d";
+  }
+  
+  .icon-a-mima:before {
+    content: "\e601";
+  }
+
+  .icon-sousuo_sousuo:before {
+    content: "\e617";
+  }
+
+  .icon-guanbi:before {
+    content: "\eca0";
+  }
+
+  .icon-zanwushuju:before {
+    content: "\e603";
+  }
+  

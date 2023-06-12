@@ -1,0 +1,30 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">记录管理</view></cu-custom>
+<view class="container">
+    <!-- 用户信息 -->
+    <view class="header">
+        <image class="face" src="../../images/face.png"></image>
+        <view class="user">
+            <view class="info">
+                <text class="name">{{userName}}</text>
+                <text class="type" wx:if="{{roleName === 'MANAGER'}}">管理员</text>
+                <!-- <text class="type" wx:elif="{{roleName === 'USER'}}">用户</text> -->
+            </view>
+            <view class="mobile">手机号: {{mobile}}</view>
+        </view>
+    </view>
+
+    <!-- 修改密码 -->
+    <view class="menu">
+        <view class="menu-item" bindtap="toPage">
+            <text class="menu-item-left-icon iconfont icon-a-mima"></text>
+            <view class="menu-item-title">修改密码</view>
+            <text class="menu-item-right-icon iconfont icon-arrow-r"></text>
+        </view>
+    </view>
+
+    <!-- 退出登录 -->
+    <view class="logout" bindtap="logout">退出</view>
+</view>
+
+<!-- 弹窗 -->
+<dialog style="opacity: 0;" animation="{{animationData}}" title="退出登录" content="确定要退出登录？" wx:if="{{isShow}}" bind:cancel="cancel" bind:confirm="confirm"></dialog>

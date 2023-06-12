@@ -1,0 +1,19 @@
+<cu-custom bgColor="bg-white"  ><view slot="content">咨询记录</view></cu-custom>
+<view class="cu-list menu-avatar">
+    <view class="cu-item " wx:for="{{list}}" data-receive="{{item.receive}}" data-send="{{item.send}}"  bindtap="goChat" wx:key="index" wx:for-item="item">
+      <view wx:if="{{item.send != '1570287728052166660' && item.receive != '1570287728052166660'}}" class="cu-avatar radius lg bg-green smfs"  >{{item.name}}</view>
+      <image wx:if="{{item.send == '1570287728052166660' || item.receive == '1570287728052166660'}}" class="cu-avatar radius lg bg-white"  src="../../images/tz.png"></image>
+      <view class="content">
+        <view>
+          <text class="text-cut">{{item.name}}</text>
+        </view>
+        <view class="text-gray text-sm flex">
+          <text class="text-cut">{{item.message}}</text>
+        </view>
+      </view>
+      <view class="action">
+        <view class="text-grey text-xs">{{item.createTime}}</view>
+        <view class="cu-tag round bg-red sm" wx:if="{{item.num>0}}">{{item.num}}</view>
+      </view>
+    </view>
+</view>

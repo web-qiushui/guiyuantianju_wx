@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+      "park": "/pages/park/index",
+      "land": "/pages/index/index",
+      "record": "/pages/record/index",
+      "call": "/pages/call/callHome"
+    }
+}

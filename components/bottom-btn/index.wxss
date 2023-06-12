@@ -1,0 +1,20 @@
+/* 弹窗 */
+.btn-content{
+    text-align: center;
+    width: 100%;
+    background-color: white;
+    padding: 28rpx 0;
+    border-top: 1px solid #D8D8D8;
+}
+
+.btn-submit{
+  width: 100%;
+}
+.btn-content{
+    font-size: 24rpx;
+    line-height: 40rpx;
+    color: #000000;
+}
+.btn-content  button{
+    width:100%;
+}

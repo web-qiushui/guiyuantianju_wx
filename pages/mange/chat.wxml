@@ -1,0 +1,60 @@
+
+<view class="cu-chat">
+ <view class="cu-info round" wx:if="{{moreType}}" bindtap="moreList">查看更多</view>
+  <view wx:for="{{msgList}}"  wx:key="index" wx:for-item="item" class="cu-item {{item.send == send?'self':''}}" >
+    <view wx:if="{{item.send != send}}" class="cu-avatar round bg-green"  >{{item.name}}</view>
+    <view class="main" wx:if="{{item.messageType == 0}}">
+      <view class="content  {{item.send == send?'bg-green':''}} shadow">
+        <text>{{item.message}}</text>
+      </view>
+    </view>
+    <view class="main"  wx:if="{{item.messageType == 1}}">
+      <image src="{{item.message}}" class="radius" mode="widthFix"></image>
+    </view>
+    <view  wx:if="{{item.send == send}}" class="cu-avatar round  bg-green" >{{item.name}}</view>
+    <view class="date">{{item.createTime}}</view>
+  </view>
+  <!-- <view class="cu-info round">对方撤回一条消息!</view> -->
+  <!-- <view class="cu-item">
+    <view class="cu-avatar radius" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big143004.jpg);"></view>
+    <view class="main">
+      <view class="content shadow">
+        <text>喵喵喵！喵喵喵！</text>
+      </view>
+    </view>
+    <view class="date "> 13:23</view>
+  </view>
+
+  <view class="cu-item self">
+    <view class="main">
+      <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" class="radius" mode="widthFix"></image>
+    </view>
+    <view class="cu-avatar radius" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big107000.jpg);"></view>
+    <view class="date"> 13:23</view>
+  </view>
+  <view class="cu-item self">
+    <view class="main">
+      <view class="action text-bold text-grey">
+        3"
+      </view>
+      <view class="content shadow">
+        <text class="cuIcon-sound text-xxl padding-right-xl"> </text>
+      </view>
+    </view>
+    <view class="cu-avatar radius" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big107000.jpg);"></view>
+    <view class="date">13:23</view>
+  </view> -->
+</view>
+
+
+
+<view class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px">
+  <view class="action">
+    <text class="cuIcon-refresh lg text-gray" bindtap="refreshList"></text>
+  </view>
+  <input class="solid-bottom"  bindconfirm='msgInput' bindinput='msgInput' bindfocus="InputFocus" bindblur="InputBlur" adjust-position="{{false}}" focus="{{false}}" maxlength="300" cursor-spacing="10"></input>
+  <view class="action">
+    <text class="cuIcon-picfill lg text-gray" bindtap="ChooseHeadImage"></text>
+  </view>
+  <button class="cu-btn bg-green shadow" style="width:80px">发送</button>
+</view>

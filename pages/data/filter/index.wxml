@@ -1,0 +1,31 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">选择工单号</view></cu-custom>
+
+<!-- 选择工单 -->
+<!-- <view class="group-list">
+  <view class="group-list-item">
+      <view class="label">生产单号</view>
+      <view class="block">{{detail.production.productionNo}}</view>
+  </view>
+</view> -->
+<view class="header">
+    <view class="search">
+        <text class="iconfont icon-sousuo_sousuo"></text>
+        <input class="ipt" type="text" value="{{keywords}}" bindinput="search" placeholder="搜索" />
+    </view>
+</view>
+
+<!-- 列表 -->
+<view class="list">
+    <view class="list-item" wx:for="{{list}}" wx:key="index" data-item="{{item}}" data-index="{{index}}" bindtap="linkTo">
+        <view class="info">
+            <view class="title">{{item.value}}</view>
+        </view>
+        <view class="list-line"></view>
+    </view>
+</view>
+
+<!-- 暂无数据 -->
+<view class="no-data" wx:if="{{list.length === 0}}">
+    <text class="icon iconfont icon-zanwushuju"></text>
+    <text>没有更多数据了</text>
+</view>

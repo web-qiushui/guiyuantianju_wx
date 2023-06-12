@@ -1,0 +1,25 @@
+<image class="bgImg" src="https://www.sxhjzynykf.cn:8088/profile/upload/2022/12/11/bj.png"  />
+<view class="loginTit">请登录</view>
+<view class="loginTxt">欢迎您使用归园田居认领系统</view>
+<!-- 登录表单 -->
+<view class="form">
+    <view class="form-item" style="{{'border: 1px solid' + (error.userName ? '#ff0000' : '#fff') }}">
+        <view class="block">
+            <input class="ipt" type="text" maxlength="11" style="{{'color: ' + (error.userName ? '#fff' : '')}}" placeholder-class="placeholder" bindinput="setUserName" value="{{formData.userName}}" placeholder="输入用户名" />
+            <view class="error-info" wx:if="{{error.userName}}">{{error.userName}}</view>
+        </view>
+    </view>
+    <view class="form-item" style="{{'border: 1px solid' + (error.password ? '#ff0000' : '#fff') }}">
+        <view class="block">
+            <input class="ipt" type="text" password="true" style="{{'color: ' + (error.password ? '#ff0000' : '')}}" placeholder-class="placeholder" bindinput="setPassword" value="{{formData.password}}" placeholder="输入密码" />
+            <view class="error-info" wx:if="{{error.password}}">{{error.password}}</view>
+        </view>
+    </view>
+
+    <view class="submit" bindtap="login">登录</view>
+    <view class="register">没有账号？<text  data-type="register" bindtap="linkTo" class="registerTxt">立即注册</text> </view>
+    <!-- <view class="forgot" data-type="forgot" bindtap="linkTo">忘记密码？</view> -->
+</view>
+
+<!-- 弹窗 -->
+<dialog style="opacity: 0;" animation="{{animationData}}" title="登录" content="登录成功" showCancel="{{false}}" wx:if="{{isShow}}" bind:confirm="confirm"></dialog>

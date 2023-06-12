@@ -1,0 +1,95 @@
+.container{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #fff;
+}
+/* 用户信息 */
+.header{
+    height: 308rpx;
+    padding-top: 52rpx;
+    background-color: #07C160;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.face{
+    width: 124rpx;
+    height: 124rpx;
+    border-radius: 124rpx;
+    margin-left: 66rpx;
+}
+
+.user{
+    color: #fff;
+    margin-left: 36rpx;
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 8rpx;
+}
+
+.name{
+    font-size: 52rpx;
+    margin-right: 20rpx;
+}
+
+.type{
+    width: 112rpx;
+    height: 44rpx;
+    background-color: rgba(255, 255, 255, .2);
+    border-radius: 8rpx;
+    font-size: 28rpx;
+    text-align: center;
+    line-height: 44rpx;
+}
+
+.mobile{
+    color: rgba(255, 255, 255, .8);
+}
+
+/* 菜单 */
+.menu{
+    border-top-left-radius: 56rpx;
+    border-top-right-radius: 56rpx;
+    background-color: #fff;
+    position: relative;
+    top: -100rpx;
+    padding: 46rpx 66rpx 0;
+}
+
+.menu-item{
+    padding: 40rpx 16rpx;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.menu-item-title{
+    flex-grow: 1;
+    margin-left: 40rpx;
+    color: #414141;
+    font-size: 32rpx;
+}
+
+/* 退出登录 */
+.logout{
+    position: fixed;
+    left: 66rpx;
+    right: 66rpx;
+    bottom: 64rpx;
+    height: 112rpx;
+    background-color: #f5f6fa;
+    border-radius: 56rpx;
+    text-align: center;
+    line-height: 112rpx;
+    font-size: 36rpx;
+}

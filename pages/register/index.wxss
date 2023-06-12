@@ -1,0 +1,68 @@
+/* 注册表单 */
+.form{
+    padding: 76rpx 80rpx;
+    background-color: #fff;
+}
+
+.form-item{
+    border-bottom: 1px solid #d5d5d5;
+    margin-bottom: 40rpx;
+    transition: all .3s;
+}
+
+.label{
+    font-size: 36rpx;
+    font-weight: 550;
+}
+
+.block{
+    padding: 20rpx 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ipt{
+    flex-grow: 1;
+    height: 48rpx;
+}
+
+.placeholder{
+    color: #bcbfcd;
+    font-size: 30rpx;
+}
+
+.submit{
+    height: 112rpx;
+    width: 100%;
+    border-radius: 56rpx;
+    text-align: center;
+    line-height: 112rpx;
+    font-size: 36rpx;
+    font-weight: 550;
+    margin-top: 77rpx;
+    color: #fff;
+    background-color: #09BB07;
+}
+.submit:active{
+    background-color: #09BB07;
+}
+
+.error-info{
+    width: 84rpx;
+    height: 40rpx;
+    text-align: center;
+    line-height: 42rpx;
+    border: 1px solid #ff0000;
+    background-color: rgba(255, 0, 0, 0.1);
+    color: #ff0000;
+    border-radius: 24rpx;
+    font-size: 24rpx;
+    transition: all .3s;
+}
+
+.verify-btn{
+    color: #09BB07;
+    margin-left: 20rpx;
+}

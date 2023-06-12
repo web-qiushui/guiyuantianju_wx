@@ -1,0 +1,11 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">认领记录</view></cu-custom>
+
+<view class="list">
+  <view class="listItem"  wx:for="{{list}}"  wx:key="index" wx:for-item="item">
+    <view class="nameRow">
+      <view class="name">{{item.createBy}}</view>
+      <view class="type">{{item.type}}</view>
+    </view>
+    <view class="time text-gray">{{item.time}}</view>
+  </view>
+</view>

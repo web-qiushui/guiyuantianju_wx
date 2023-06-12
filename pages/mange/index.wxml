@@ -1,0 +1,31 @@
+
+<!-- 耕地管理 -->
+<view class="manage-container">
+    <!-- wx:if="{{listData.length>0}}" -->
+    <!-- listData="{{listData}}" -->
+    <scroll-view 
+            class="scroll-height"
+            scroll-y="true" 
+            bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+        <view class="touchList {{(moving && moveIndex==index) ? 'moving' :''}}" wx:for="{{ploughList}}" wx:key="id"  data-id="{{item.id}}" >
+            <view class="device_item"  bindtap="go" bindtouchstart="touchS" bindtouchmove="touchM" data-index="{{index}}">
+            <view class="oper-left">
+                <view class="left-box">
+                <image class="plugh-image" src="{{item.imageUrl}}"></image>
+                <text>{{item.name}}</text>
+                </view>
+                <view class="left-oper" data-id="{{item.id}}" bindtap="manage">管理</view>
+            </view>
+            </view>
+            <view class="touchBtn">
+                <view class="delBtn" data-id="{{item.id}}" bindtap="delBtn">删除</view>
+            </view>
+        </view>
+    </scroll-view >
+
+    <!-- 新增 -->
+        <view class="btn_Suspension" bindtap="addDetail" catchtouchmove="buttonMove" bindtouchstart="buttonStart" bindtouchend="buttonEnd" style="top:{{buttonTop}}px;left:{{buttonLeft}}px;">
+        <!-- <image class="add-icon" src="../../images/add.png"></image>这里是按钮图标，下载地址会在文章底部说明 -->
+        <text class="add-text">新增</text>
+        </view>
+</view>

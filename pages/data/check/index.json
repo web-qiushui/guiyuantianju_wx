@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "dialog": "../../../components/dialog"
+  },
+  "navigationBarTitleText": "验收"
+}

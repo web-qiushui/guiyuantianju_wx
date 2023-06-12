@@ -1,0 +1,82 @@
+.order-container{
+    padding: 0 50rpx 0 40rpx;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.addr-content{
+    padding: 50rpx 0 40rpx 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2rpx solid #D8D8D8;
+}
+.addr-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+.addr-image{
+    width: 44rpx;
+    height: 44rpx;
+    margin-right: 40rpx;
+}
+.addr-arrow{
+    width: 18rpx;
+    height: 34rpx;
+}
+.addr-info{
+    width: calc(100% - 50rpx);
+}
+.addr-user{
+    font-size: 34rpx;
+    font-weight: normal;
+    line-height: 48rpx;
+}
+.addr-detail{
+    font-size: 28rpx;
+    color: rgba(0, 0, 0, 0.5)
+}
+
+.order-list{
+    /* padding: 0 56rpx 0 40rpx; */
+
+}
+.order-image{
+    width: 144rpx;
+    height: 144rpx;
+    margin-right: 32rpx;
+}
+.order-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 28rpx;
+}
+.order-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.5)
+}
+.order-title{
+    font-size: 34rpx;
+    color: #000000;
+    margin-bottom: 4rpx;
+}
+.order-value{
+    font-size: 28rpx; 
+    margin-top: 14rpx;
+}
+.m-r-20{
+    margin-right: 20rpx;
+}
+.btn-content{
+    /* display: flex; */
+    
+}

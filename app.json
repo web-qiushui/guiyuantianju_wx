@@ -1,0 +1,38 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/login/index",
+        "pages/mine/index",
+        "pages/register/index",
+        "pages/forgot/index",
+        "pages/upwd/index",
+        "pages/data/write/index",
+        "pages/data/list/index",
+        "pages/data/detail/index",
+        "pages/data/check/index",
+        "pages/record/index",
+        "pages/mange/index",
+        "pages/data/crop/index",
+        "pages/data/orderDetail/index",
+        "pages/data/userOrderDetail/index",
+        "pages/data/claimDetail/index",
+        "pages/data/cropTextarea/index",
+        "pages/data/address/index",
+        "pages/call/callHome",
+        "pages/home/home",
+        "pages/park/index",
+        "pages/call/chat",
+        "pages/claimRecord/claimRecord"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "black"
+    },
+    "usingComponents": {
+        "cu-custom": "/colorui/components/cu-custom"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

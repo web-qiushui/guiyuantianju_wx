@@ -1,0 +1,85 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">耕地信息</view></cu-custom>
+<!-- 耕地详情 -->
+<view class="form">
+
+    <!-- 基本信息 -->
+    <view class="group">
+        <view class="group-title">
+            <view class="title">耕地信息</view>
+        </view>
+
+        <!-- 直播 -->
+        <video id="myVideo" class="topVideo" wx:if="{{videoShow}}" custom-cache="{{false}}" picture-in-picture-show-progress="{{false}}" show-fullscreen-btn="{{false}}" show-play-btn="{{false}}"  show-progress="{{false}}" show-bottom-progress="{{false}}" src="{{ploughDetailUrl}}"   bindplay='playSuccess' autoplay></video>
+        <view class="loadingBox" wx:if="{{videoLoad}}">
+            <image class="loadingSvg" src="../../../images/loading.svg"></image>
+        </view>
+        <view style="width: 100%;height:500rpx"></view>
+        <view class="form-item bdno">
+            <view class="label">耕地名称</view>
+            <view class="block">
+                <input type="text" placeholder-class="placeholder" placeholder="请输入" value="{{name}}" bindinput="setName" />
+            </view>
+        </view>
+        <view class="form-item bdno">
+            <view class="label">耕地图片</view>
+            <view class="block">
+                <view class="block block-flex" bindtap="chooseImage">
+                    <input hidden="{{imgUrl.length>0}}" type="text" placeholder-class="placeholder" placeholder="请选择" value="{{ imgUrl}}" disabled />
+
+                    <image wx:if="{{imgUrl}}" class="upload-image" src='{{imgUrl}}'></image>
+                    <text class="iconfont icon-arrow-r"></text>
+                </view>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="label">耕地简介</view>
+            <view class="block">
+                <view class="block block-flex" bindtap="cropDetail">
+                    <input type="text" placeholder-class="placeholder" placeholder="请选择" value="{{ description}}" disabled />
+                    <text class="iconfont icon-arrow-r"></text>
+                </view>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="label">认领记录</view>
+            <view class="block" bindtap="goRecord">
+                <view class="block block-flex">
+                    <text class="iconfont icon-arrow-r"></text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 作物信息 -->
+    <view class="group" wx:if="{{idx}}" style="margin-bottom: 92rpx;">
+        <view class="group-title">
+            <view class="title">作物信息</view>
+        </view>
+
+        <view wx:if="{{cropEntities.length>0}}" wx:for="{{cropEntities}}" wx:key="index">
+            <view class="form-item">
+                <view class="label">作物{{index+1}}</view>
+                <view class="block">
+                    <view class="block block-flex" data-id="{{item.id}}" bindtap="chooseOrder">
+                        <input type="text" value="{{item.name}}" disabled />
+                        <text class="iconfont icon-arrow-r"></text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="label">作物{{cropEntities.length+1}}</view>
+            <view class="block">
+                <view class="block block-flex" data-id="null" bindtap="chooseOrder">
+                    <input type="text" placeholder-class="placeholder" placeholder="点击录入新作物" value="{{selectValue}}" disabled />
+                    <text class="iconfont icon-arrow-r"></text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<!-- 提交按钮 -->
+<view class="footer">
+    <button class="m-b-36" bindtap="submitPlough" type="primary">确认</button>
+</view>

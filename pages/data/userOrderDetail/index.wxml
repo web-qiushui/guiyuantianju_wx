@@ -1,0 +1,44 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">订单详情</view></cu-custom>
+
+<!-- 用户端订单详情 -->
+<view class="order-container">
+    <!-- 地址 -->
+    <view class="addr-content" bindtap="addAddress">
+        <view class="addr-box">
+            <image class="addr-image" src="../../../images/addr-icon.png"></image>
+            <view class="addr-info" wx:if="{{userName}}">
+                <view class="addr-user">
+                    <text>{{userName}}</text>
+                    <text class="m-l-16">{{userPhone}}</text>
+                </view>
+                <view class="addr-detail">{{userAddress}}{{userAddressDetail}}</view>
+            </view>
+            <view wx:else>
+                <view>请输入收货地址</view>      
+            </view>
+        </view>
+        <image class="addr-arrow" src="../../../images/arrow-left.png"></image>
+    </view>
+    <!-- 订单内容 -->
+    <view class="order-list">
+        <view class="order-item" wx:for="{{orderEntities}}" wx:key="id" data-id="{{item.id}}">
+            <view class="order-content">
+                <image class="order-image" src="{{item.imageUrl}}"></image>
+                <view class="order-info">
+                    <view class="order-title">{{item.ploughName?item.ploughName:''}}</view>
+                    <view class="order-date">{{item.name}}  {{item.specifications}}</view>
+                    <view class="order-value">¥{{item.unitPrice}}</view>
+                </view>
+            </view>
+            <view class='stepper'>
+                <text class='{{minusStatus}}' data-index="{{index}}" type='number' p  bindtap='bindMinus'>-</text>
+                <input data-index="{{index}}" bindinput='bindManual' value='{{item.num}}'></input>
+                <text data-index="{{index}}" bindtap='bindPlus'>+</text>
+            </view>
+        </view>
+    </view>
+    <!-- 按钮 -->
+    <view class="footer"  style="{{'padding-bottom: 76rpx'}}">
+        <button loading="{{loadingBtn}}" class="btn-submit" disabled="{{disabled}}" type="primary" bindtap="confirm">立即下单</button>
+    </view>
+</view>

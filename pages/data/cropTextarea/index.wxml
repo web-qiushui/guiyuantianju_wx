@@ -1,0 +1,11 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">输入简介</view></cu-custom>
+
+<!--文本框-->
+<view class="textarea-content">
+    <textarea class="textarea" cols="30" rows="30" placeholder="请填写简介" bindinput="setRemark" value="{{remark}}"></textarea>
+
+    <!-- 确定按钮 -->
+    <view class="footer"  style="{{'padding-bottom: 76rpx'}}">
+        <button class="m-b-36" bindtap="confirm" type="primary" >确认</button> 
+    </view>
+</view>

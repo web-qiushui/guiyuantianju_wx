@@ -1,0 +1,42 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">订单详情</view></cu-custom>
+
+<!-- 管理端订单详情 -->
+<view class="order-container">
+    <view>
+        <!-- 地址 -->
+        <view class="addr-content">
+            <view class="addr-box">
+                <image class="addr-image" src="../../../images/addr-icon.png"></image>
+                <view class="addr-info" wx:if="{{true}}">
+                    <view class="addr-user">
+                        <text class="m-r-20">{{orderDetail.userName}}</text><text>{{orderDetail.userPhone}}</text>
+                    </view>
+                    <view class="addr-detail">{{orderDetail.userAddress}}{{orderDetail.userAddressDetail}}</view>
+                </view>
+                <view wx:else>
+                    请输入收货地址
+                </view>
+            </view>
+            <!-- <image class="addr-arrow" src="../../../images/arrow-left.png"></image> -->
+        </view>
+        <!-- 订单内容 -->
+        <view class="order-list">
+            <view class="order-item" wx:for="{{orderDetail.orderEntities}}" wx:key="id" data-id="{{item.id}}">
+                <view class="order-content">
+                    <image class="order-image" src="{{item.imageUrl}}"></image>
+                    <view class="order-info">
+                        <view class="order-title">{{item.ploughName?item.ploughName:''}}</view>
+                        <view class="order-date">{{item.cropName}}  {{item.cropSpec}}</view>
+                        <view class="order-value">¥{{item.cropUnitPrice}}</view>
+                    </view>
+                </view>
+                <view>X{{item.num}}</view>
+            </view>
+        </view>
+    </view>
+    <!-- 确认收货 -->
+    <view class="btn-content">
+        <button wx:if="{{orderDetail.status===1 && userType ==1}}" class="btn-submit" disabled="{{disabled}}" type="primary" bindtap="confirmReceipt">已发货</button>
+        <button wx:if="{{orderDetail.status===2 && userType ==2}}" class="btn-submit" disabled="{{disabled}}" type="primary" bindtap="confirmReceipt">确认收货</button>
+    </view>
+</view>

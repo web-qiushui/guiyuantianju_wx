@@ -1,0 +1,82 @@
+/* 弹窗 */
+.dialog{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.dialog-win{
+    width: 600rpx;
+    height: 400rpx;
+    border-radius: 36rpx;
+    background-color: #fff;
+    position: relative;
+    
+}
+
+.dialog-close{
+    width: 24rpx;
+    height: 24rpx;
+    position: absolute;
+    right: 48rpx;
+    top: 48rpx;
+}
+
+.dialog-title{
+    padding: 22rpx 0;
+    text-align: center;
+    font-size: 34rpx;
+    color: #0f0f0f;
+    font-weight: 550;
+    margin-top: 48rpx;
+}
+
+.dialog-content{
+    text-align: center;
+    color: #343434;
+    font-size: 30rpx;
+}
+
+.dialog-btns{
+    padding: 0 86rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 72rpx;
+}
+
+.dialog-btns-cancel, .dialog-btns-confirm{
+    height: 90rpx;
+    text-align: center;
+    line-height: 90rpx;
+    font-size: 34rpx;
+    border-radius: 46rpx;
+}
+
+.dialog-btns-cancel{
+    width: 200rpx;
+    background-color: #f5f6fa;
+    color: #343434;
+}
+
+.dialog-btns-cancel:active{
+    background-color: #e8eaee;
+}
+
+.dialog-btns-confirm{
+    background-color: #09BB07;
+    color: #fff;
+}
+
+.dialog-btns-confirm:active{
+    background-color: #09BB07;
+}

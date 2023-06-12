@@ -1,0 +1,45 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">输入简介</view></cu-custom>
+
+<!-- 表单 -->
+<view class="form">
+    <!-- 基本信息 -->
+    <view class="group">
+
+        <view class="form-item bdno">
+            <view class="label">收货人姓名</view>
+            <view class="block" style="text-align: right;">
+                <input type="text" placeholder-class="placeholder" placeholder="请输入" value="{{userName}}" bindinput="setUserName" />
+            </view>
+        </view>
+        <view class="form-item bdno">
+            <view class="label">联系手机号</view>
+            <view class="block">
+                <input type="text" placeholder-class="placeholder" placeholder="请输入" value="{{userPhone}}" bindinput="setUserPhone" />
+            </view>
+        </view>
+        <view class="form-item bdno">
+            <view class="label">收货地址</view>
+            <view class="block">
+                <picker mode="region" bindchange="bindRegionChange" value="{{userAddress}}" custom-item="{{customItem}}">
+                    <view class="picker">
+                    {{userAddress[0]}} {{userAddress[1]}} {{userAddress[2]}}
+                    </view>
+                </picker>
+            </view>
+        </view>
+       
+        <view class="form-item">
+            <view class="label">详细地址</view>
+            <view class="block">
+                <view class="block block-flex" bindtap="cropDetail">
+                    <textarea class="textarea" cols="30" rows="30" maxlength="2000" placeholder="请输入所在小区楼号门牌号" bindinput="setUserAddrDetail" value="{{userAddressDetail}}"></textarea>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<!-- 提交按钮 -->
+<view class="footer"  style="{{'padding-bottom: 76rpx'}}">
+    <button bindtap="confirm" type="primary" >确认</button>  
+</view>

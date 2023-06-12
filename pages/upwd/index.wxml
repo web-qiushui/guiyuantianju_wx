@@ -1,0 +1,30 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">修改密码</view></cu-custom>
+<!-- 修改密码表单 -->
+<view class="form">
+    <view class="form-item" style="{{'border-bottom: 1px solid' + (error.password ? '#ff0000' : '#d5d5d5') }}">
+        <view class="label">原密码</view>
+        <view class="block">
+            <input class="ipt" type="text" password="true" style="{{'color: ' + (error.password ? '#ff0000' : '')}}" placeholder-class="placeholder" bindinput="setPassword" value="{{formData.password}}" placeholder="请输入原始密码" />
+            <view class="error-info" wx:if="{{error.password}}">{{error.password}}</view>
+        </view>
+    </view>
+    <view class="form-item" style="{{'border-bottom: 1px solid' + (error.newPassword ? '#ff0000' : '#d5d5d5') }}">
+        <view class="label">新密码</view>
+        <view class="block">
+            <input class="ipt" type="text" password="true" style="{{'color: ' + (error.newPassword ? '#ff0000' : '')}}" placeholder-class="placeholder" bindinput="setNewPassword" value="{{formData.newPassword}}" placeholder="请输入新密码，长度不超过16个字符" />
+            <view class="error-info" wx:if="{{error.newPassword}}">{{error.newPassword}}</view>
+        </view>
+    </view>
+    <view class="form-item" style="{{'border-bottom: 1px solid' + (error.confirmPassword ? '#ff0000' : '#d5d5d5') }}">
+        <view class="label">确认新密码</view>
+        <view class="block">
+            <input class="ipt" type="text" password="true" style="{{'color: ' + (error.confirmPassword ? '#ff0000' : '')}}" placeholder-class="placeholder" bindinput="setConfirmPassword" value="{{formData.confirmPassword}}" placeholder="再次输入新密码，长度不超过16个字符" />
+            <view class="error-info" wx:if="{{error.confirmPassword}}">{{error.confirmPassword}}</view>
+        </view>
+    </view>
+
+    <view class="submit" bindtap="updatePwd">提交</view>
+</view>
+
+<!-- 弹窗 -->
+<dialog style="opacity: 0;" animation="{{animationData}}" title="修改密码" content="修改密码成功，请重新登录" confirmText="立即登录" showCancel="{{false}}" wx:if="{{isShow}}" bind:confirm="confirm"></dialog>
